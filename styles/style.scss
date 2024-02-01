@@ -1,0 +1,751 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #87ceeb;
+  overflow: hidden;
+  transition: all 2s ease-in;
+}
+.clouds {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  .cloud {
+    background: #fff;
+    width: 160px;
+    border-radius: 200px;
+    position: absolute;
+    height: 40px;
+    margin: 30px 0 30px 0;
+    transition: opacity 1s ease-in;
+  }
+
+  /*雲的造型*/
+  .cloud:after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background: #fff;
+    display: inline-block;
+    top: -40px;
+    right: 20px;
+    border-radius: 100%;
+  }
+  /*雲的造型*/
+  .cloud:before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: #fff;
+    display: block;
+    top: -25px;
+    left: 20px;
+    border-radius: 100%;
+  }
+  .cloud_1 {
+    top: 30%;
+    left: 10%;
+  }
+  .cloud_2 {
+    top: 10%;
+    left: 40%;
+  }
+  .cloud_3 {
+    top: 23%;
+    left: 70%;
+  }
+  .cloud_4 {
+    top: 8%;
+    left: 100%;
+  }
+  .cloud_5 {
+    top: 20%;
+    left: 130%;
+  }
+  .cloud_6 {
+    top: 8%;
+    left: 160%;
+  }
+  .cloud_7 {
+    top: 23%;
+    left: 190%;
+  }
+  .sun {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #fdd835;
+    border-radius: 50%;
+    left: 200px;
+    top: 50px;
+    z-index: -1;
+    box-shadow: (0px 0px 10px #fdd835);
+    transition: all 1.5s ease-in;
+  }
+  .moon {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50%;
+    right: -200px;
+    top: 50px;
+    z-index: 200;
+    box-shadow: (0px 0px 10px #fff);
+    transition: all 1.5s ease-in;
+  }
+  .starry {
+    height: 100%;
+    i {
+      position: absolute;
+      background-color: #fff;
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+      animation: animate linear infinite;
+    }
+  }
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-75px, -75px);
+  }
+}
+
+//看板
+.page_title {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  .Kanban_main {
+    display: flex;
+    flex-direction: column;
+    .Kanban {
+      width: 200px;
+      height: 100px;
+      background-image: url(../image/Kanban.png);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+    .pole {
+      margin: auto;
+      width: 20px;
+      height: 50px;
+      background-image: url(../image/pole.png);
+    }
+  }
+}
+
+.page {
+  position: relative;
+  height: 100vh;
+  width: 9600px;
+  min-width: 530vw;
+  //內容
+  .content {
+    display: flex;
+    height: 80%;
+    .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: 100vw;
+      width: 1920px;
+      position: relative;
+      .text {
+        z-index: 30;
+      }
+      .tree_1 {
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        z-index: 11;
+      }
+      .tree_2 {
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        z-index: 12;
+      }
+      .tree_3 {
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+        z-index: 11;
+      }
+    }
+    .mountain_page {
+      position: absolute;
+      display: flex;
+      align-self: flex-end;
+      left: 75vw;
+      .mountain {
+        width: 900px;
+        height: 450px;
+        position: relative;
+        z-index: 4;
+        .light {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, #d0fac5, #75b48c);
+          clip-path: polygon(
+            0% 100%,
+            50% 0%,
+            52% 20%,
+            50% 30%,
+            55% 40%,
+            50% 50%,
+            60% 70%,
+            50% 85%,
+            55% 100%
+          );
+        }
+        .shadow {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, #81cb6e, #54946c);
+          clip-path: polygon(
+            50% 0%,
+            100% 100%,
+            55% 100%,
+            50% 85%,
+            60% 70%,
+            50% 50%,
+            55% 40%,
+            50% 30%,
+            52% 20%
+          );
+        }
+      }
+    }
+    //關於
+    .about_page {
+      width: 1920px;
+      min-width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 50;
+      position: relative;
+      //看板
+      .about_content {
+        .Kanban {
+          width: 700px;
+          height: 300px;
+          background: url(../image/Kanban.png);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 1.5rem;
+          line-height: 2;
+          letter-spacing: 1px;
+        }
+        .pole {
+          margin: auto;
+          width: 50px;
+          height: 200px;
+          background: url(../image/pole.png);
+          position: relative;
+        }
+      }
+    }
+    //skill
+    .skill_page {
+      min-width: 100vw;
+      width: 1920px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 50;
+      position: relative;
+
+      @keyframes dropAnimation {
+        0% {
+          transform: scale(1) rotate(0deg);
+          width: 90px;
+          border-top-left-radius: 40%;
+          border-bottom-left-radius: 45%;
+        }
+        50% {
+          transform: scale(1.3) rotate(180deg);
+        }
+        100% {
+          transform: scale(1) rotate(360deg);
+        }
+      }
+      .small_tree {
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        transform-origin: bottom;
+        transition: transform 0.3s ease-in;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .circle {
+          cursor: pointer;
+          position: absolute;
+          top: -25px;
+          left: -25px;
+          width: 125px;
+          height: 125px;
+          border: 5px solid white;
+          border-radius: 50%;
+          animation: circleAn 1s forwards infinite;
+        }
+        @keyframes circleAn {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.2);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+      .skill_tree {
+        display: flex;
+        flex-direction: column;
+        .leaves {
+          .leave_top {
+            transition: all 0.5s ease-in;
+            margin: auto;
+            width: 400px;
+            height: 0px; //100px
+            background: url(../image/leaves.png);
+          }
+          .leave_main {
+            transition: all 0.5s ease-in;
+            width: 900px;
+            height: 0px; //300px
+            background: url(../image/leaves.png);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            justify-content: center;
+            //內容
+            .leave_text {
+              width: 100%;
+              color: white;
+              padding: 0.5rem;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              .apple {
+                transform: scale(0);
+                transition: all 0.5s ease-in;
+                position: relative;
+                margin: 5px;
+                width: 130px;
+                height: 110px;
+                background: radial-gradient(#0000, rgba(0, 0, 0, 0.1)),
+                  radial-gradient(rgba(239, 156, 109, 0.2), #0000);
+                background-color: #bf2934;
+                border-radius: 160px 150px 145px 150px/160px 140px 210px 190px;
+                .petiole {
+                  position: absolute;
+                  width: 10px;
+                  height: 40px;
+                  transform: translate(65px, -15px) rotate(35deg);
+                  background-color: #894900;
+                  border-radius: 50%;
+                }
+                .text {
+                  position: absolute;
+                  transform: translate(-50%, -50%);
+                  left: 50%;
+                  top: 50%;
+                }
+              }
+            }
+          }
+          .leave_bottom {
+            transition: all 0.25s ease-in;
+            margin: auto;
+            width: 400px;
+            height: 0px; //100px
+            background: url(../image/leaves.png);
+          }
+        }
+        .trunk {
+          margin: auto;
+          width: 100px;
+          transition: all 0.25s ease-in;
+          height: 0px; //200px
+          background: url(../image/pole.png);
+        }
+      }
+    }
+    //作品
+    .project_page {
+      position: relative;
+      min-width: 100vw;
+      width: 1920px;
+      z-index: 101;
+      display: flex;
+
+      .ship {
+        width: 200px;
+        height: 150px;
+        overflow: hidden;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+      .ship_left {
+        position: absolute;
+        bottom: -50px;
+        left: 100px;
+      }
+      .ship_rigth {
+        position: absolute;
+        bottom: -50px;
+        right: -100px;
+        z-index: 101;
+        overflow: hidden;
+        transform: translateX(-50%);
+      }
+      .ship_move {
+        position: fixed;
+        left: 50%;
+        // top: 71%;
+      }
+      .ship .ship_img {
+        position: absolute;
+        left: 0px;
+        width: 800px;
+        height: 150px;
+        background: url(../image/ship.png);
+      }
+      .water {
+        position: absolute;
+        width: 100%;
+        height: 20vh;
+        background-color: #26c1ff;
+        bottom: -25%;
+      }
+      .water:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20vh;
+        background-color: rgba(#26c1ff, 0.2);
+        z-index: 102;
+      }
+      .water::after {
+        content: "";
+        position: absolute;
+        width: 150vw;
+        height: 20vh;
+        z-index: 102;
+      }
+      .contents {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        z-index: 11;
+        .project {
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+          justify-content: center;
+          .img {
+            width: 500px;
+            height: 400px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .pro_content {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: bolder;
+            ul {
+              padding-left: 1rem;
+            }
+            .links {
+              display: flex;
+              .link {
+                margin: 0.5rem;
+                border: 1px solid #ddd;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.2s ease-in;
+                &:hover {
+                  background-color: #ddd;
+                }
+                a {
+                  width: 80%;
+                  height: 80%;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //house_page
+    .house_page {
+      min-width: 100vw;
+      width: 1700px;
+      z-index: 300;
+      height: 100%;
+      position: relative;
+      .house {
+        bottom: 0;
+        width: 1000px;
+        height: 800px;
+        background-image: url(../image/house.png);
+        position: absolute;
+        bottom: 25px;
+        transform: translateX(-50%);
+        left: 50%;
+        .bed {
+          width: 186px;
+          height: 94px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          overflow: hidden;
+          .bed_img {
+            background-image: url(../image/bed.png);
+            width: 386px;
+            height: 94px;
+            position: absolute;
+          }
+        }
+      }
+
+      .house_floor {
+        position: absolute;
+        width: 1250px;
+        height: 25px;
+        background-image: url(../image/house_floor.png);
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: 0;
+      }
+    }
+    //contact
+    .final_page {
+      position: relative;
+      min-width: 30vw;
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      z-index: 20;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: bolder;
+      .contact_mail {
+        display: flex;
+        flex-direction: row;
+        .mail {
+          width: 100px;
+          height: 100px;
+          display: flex;
+        }
+        .account {
+          flex: 1;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          font-size: 1.5rem;
+          .account_after {
+            transition: all 0.8s ease;
+            margin: auto;
+            position: absolute;
+            left: -400px;
+            display: flex;
+          }
+          .account_after_centen {
+            align-items: center;
+            justify-content: center;
+            left: 1rem;
+            .account_text {
+              padding: 0 1rem;
+            }
+          }
+          .copy {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .copy_mesg {
+            background-color: #198754;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 0 0.25rem;
+            opacity: 0;
+            transition: opacity 0.1s ease-in;
+            img {
+              width: 70%;
+              height: 70%;
+              object-fit: contain;
+            }
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+      .github {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        a {
+          display: flex;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+//地板
+.floor {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  height: 20%;
+  width: 100%;
+  z-index: 11;
+  //土地
+  .earth {
+    position: absolute;
+    width: 100%;
+    background-image: url(../image/earth.png);
+    height: 100%;
+  }
+  //草地
+  .grass {
+    position: absolute;
+    width: 100%;
+    background-image: url(../image/grass.png);
+    height: 100px;
+  }
+}
+//人物
+
+.my {
+  z-index: 60;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 20%;
+  .my_img {
+    left: -600px;
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-image: url(../image/Untitled.png);
+  }
+}
+
+//樹木
+.tree_a {
+  z-index: 10;
+  .leaves {
+    background-color: #73b839;
+    width: 250px;
+    height: 250px;
+  }
+  .trunk {
+    background-color: #ae9375;
+    width: 75px;
+    height: 200px;
+    margin: auto;
+  }
+}
+.tree_b {
+  z-index: 10;
+  .leaves {
+    background-color: #679267;
+    width: 300px;
+    height: 300px;
+  }
+  .trunk {
+    background-color: rgb(167, 138, 101);
+    width: 75px;
+    height: 300px;
+    margin: auto;
+  }
+}
+.tree_c {
+  z-index: 10;
+  .leaves {
+    background-color: #548e5a;
+    width: 125px;
+    height: 125px;
+  }
+  .trunk {
+    background-color: rgb(198, 154, 95);
+    width: 50px;
+    height: 25px;
+    margin: auto;
+  }
+}
