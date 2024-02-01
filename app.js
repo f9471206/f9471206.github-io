@@ -1,3 +1,5 @@
+document.querySelector(".page").style.height = window.innerHeight + "px";
+
 let skyStar = false;
 window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
