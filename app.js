@@ -9,6 +9,14 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
+window.addEventListener("keydown", (e) => {
+  if (e.keyCode == 39) {
+    window.scrollBy({ left: 500, behavior: "smooth" });
+  } else if (e.keyCode == 37) {
+    window.scrollBy({ left: -500, behavior: "smooth" });
+  }
+});
+
 let original_X = document.querySelector(".page").getBoundingClientRect().x;
 window.addEventListener("scroll", function () {
   let my = document.querySelector(".my_img");
