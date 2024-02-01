@@ -242,6 +242,7 @@ body {
   padding: 1.5rem;
   line-height: 2;
   letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 .page .content .about_page .about_content .pole {
   margin: auto;
@@ -315,7 +316,7 @@ body {
 .page .content .skill_page .skill_tree .leaves .leave_top {
   transition: all 0.5s ease-in;
   margin: auto;
-  width: 400px;
+  width: 600px;
   height: 0px;
   background: url(../image/leaves.png);
 }
@@ -362,11 +363,12 @@ body {
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  font-size: 1.25rem;
 }
 .page .content .skill_page .skill_tree .leaves .leave_bottom {
   transition: all 0.25s ease-in;
   margin: auto;
-  width: 400px;
+  width: 600px;
   height: 0px;
   background: url(../image/leaves.png);
 }
@@ -510,6 +512,8 @@ body {
   bottom: 25px;
   transform: translateX(-50%);
   left: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .page .content .house_page .house .bed {
   width: 186px;
@@ -533,6 +537,7 @@ body {
   transform: translateX(-50%);
   left: 50%;
   bottom: 0;
+  background-size: contain;
 }
 .page .content .final_page {
   position: relative;
@@ -549,6 +554,7 @@ body {
 .page .content .final_page .contact_mail {
   display: flex;
   flex-direction: row;
+  padding: 1rem 0;
 }
 .page .content .final_page .contact_mail .mail {
   width: 100px;
@@ -651,7 +657,7 @@ body {
 }
 
 .my {
-  z-index: 60;
+  z-index: 30;
   overflow: hidden;
   width: 200px;
   height: 200px;
@@ -711,4 +717,78 @@ body {
   width: 50px;
   height: 25px;
   margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .clouds .sun,
+  .clouds .moon {
+    top: 3%;
+    width: 90px;
+    height: 90px;
+  }
+  .page_title .Kanban_main .Kanban {
+    width: 100px;
+    height: 50px;
+  }
+  .page_title .Kanban_main .pole {
+    width: 10px;
+    height: 25px;
+  }
+  .page .content .about_page .about_content .Kanban {
+    width: 90vw;
+    height: 30vh;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .page .content .about_page .about_content .pole {
+    width: 20px;
+    height: 100px;
+  }
+  .page .content .skill_page .skill_tree .leaves .leave_main .leave_text .apple {
+    width: 70px;
+    height: 60px;
+  }
+  .page .content .skill_page .skill_tree .leaves .leave_main .leave_text .apple .petiole {
+    width: 5px;
+    height: 20px;
+    transform: translate(40px, -10px) rotate(35deg);
+  }
+  .page .content .skill_page .skill_tree .leaves .leave_main {
+    width: 600px;
+  }
+  .page .content .skill_page .skill_tree .leaves .leave_main .leave_text .apple .text {
+    font-size: 1rem;
+  }
+  .page .content .project_page .contents .project {
+    justify-content: start;
+  }
+  .page .content .project_page .contents .project .img {
+    width: 450px;
+    height: 300px;
+  }
+  .page .content .house_page {
+    min-width: 1200px;
+  }
+  .page .content .house_page .house {
+    width: 800px;
+    height: 600px;
+  }
+  .page .content .house_page .house_floor {
+    width: 950px;
+  }
+  .page .content .final_page {
+    min-width: 360px;
+  }
+  .page .content .final_page .contact_mail .mail,
+  .page .content .final_page .github {
+    width: 60px;
+    height: 60px;
+  }
+  .page .content .final_page .contact_mail .account {
+    font-size: 1.25rem;
+  }
+  .page .content .final_page .contact_mail .account .copy {
+    width: 20px;
+    height: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

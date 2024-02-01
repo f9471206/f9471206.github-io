@@ -203,21 +203,27 @@ let leave_main = document.querySelector("#leave_main");
 let leave_top = document.querySelector("#leave_top");
 let apples = this.document.querySelectorAll(".apple");
 document.querySelector("#circle").addEventListener("click", function () {
+  let treeHight;
+  if (window.innerWidth < 800) {
+    treeHight = 80;
+  } else {
+    treeHight = 100;
+  }
   document.querySelector("#small_tree").style.transform = "scale(0)";
   document
     .querySelector("#small_tree")
     .addEventListener("transitionend", () => {
-      trunk.style.height = "200px";
+      trunk.style.height = treeHight * 2 + "px";
       document.querySelector("#small_tree").style.display = "none";
     });
   trunk.addEventListener("transitionend", () => {
-    leave_bottom.style.height = "100px";
+    leave_bottom.style.height = treeHight + "px";
   });
   leave_bottom.addEventListener("transitionend", () => {
-    leave_main.style.height = "300px";
+    leave_main.style.height = treeHight * 3 + "px";
   });
   leave_main.addEventListener("transitionend", () => {
-    leave_top.style.height = "100px";
+    leave_top.style.height = treeHight + "px";
   });
   leave_top.addEventListener("transitionend", () => {
     apples.forEach((apple) => {
