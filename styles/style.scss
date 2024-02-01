@@ -11,8 +11,7 @@ body {
   font-style: normal;
   background-color: #87ceeb;
   transition: all 2s ease-in;
-  overflow-y: hidden;
-  overflow-x: clip;
+  overflow: hidden;
 }
 .clouds {
   width: 100%;
@@ -527,7 +526,7 @@ body {
     }
     //house_page
     .house_page {
-      min-width: 1300px;
+      min-width: 1500px;
       z-index: 300;
       height: 100%;
       position: relative;
@@ -569,7 +568,7 @@ body {
     //contact
     .final_page {
       position: relative;
-      min-width: 30vw;
+      min-width: 500px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -692,7 +691,7 @@ body {
   width: 200px;
   height: 200px;
   position: fixed;
-  transform: translateX(-50%);
+  transform: translatex(-50%);
   left: 50%;
   bottom: 20%;
   .my_img {

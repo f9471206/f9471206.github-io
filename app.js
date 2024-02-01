@@ -1,6 +1,19 @@
 document.querySelector(".page").style.height = window.innerHeight + "px";
 document.querySelector(".page").style.width =
   document.documentElement.scrollWidth + "px";
+
+let touchstart_x;
+window.addEventListener("touchstart", (e) => {
+  touchstart_x = e.targetTouches[0].clientX;
+});
+window.addEventListener("touchend", (e) => {
+  console.log(touchstart_x - e.changedTouches[0].clientX);
+  window.scrollBy({
+    left: touchstart_x - e.changedTouches[0].clientX,
+    behavior: "smooth",
+  });
+});
+
 let skyStar = false;
 window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
