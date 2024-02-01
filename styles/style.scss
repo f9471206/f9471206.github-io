@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-optical-sizing: auto;
@@ -10,7 +11,8 @@ body {
   font-style: normal;
   background-color: #87ceeb;
   transition: all 2s ease-in;
-  overflow-y: clip;
+  overflow-y: hidden;
+  overflow-x: clip;
 }
 .clouds {
   width: 100%;
@@ -157,9 +159,7 @@ body {
 
 .page {
   position: relative;
-  height: 100%;
-  width: 9600px;
-  min-width: 530vw;
+  width: 7500px;
   //內容
   .content {
     display: flex;
@@ -527,8 +527,7 @@ body {
     }
     //house_page
     .house_page {
-      min-width: 100vw;
-      width: 1700px;
+      min-width: 1300px;
       z-index: 300;
       height: 100%;
       position: relative;
@@ -571,7 +570,6 @@ body {
     .final_page {
       position: relative;
       min-width: 30vw;
-      width: 700px;
       display: flex;
       flex-direction: column;
       justify-content: center;

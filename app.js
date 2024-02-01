@@ -1,5 +1,6 @@
 document.querySelector(".page").style.height = window.innerHeight + "px";
-
+document.querySelector(".page").style.width =
+  document.documentElement.scrollWidth + "px";
 let skyStar = false;
 window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
@@ -84,7 +85,7 @@ window.addEventListener("scroll", function () {
     //夜晚變天
     document.querySelector("body").style.backgroundColor = "rgb(35,35,35)";
     //月亮出現
-    document.querySelector(".moon").style.right = "200px";
+    document.querySelector(".moon").style.right = "10%";
     //太陽消失
     document.querySelector(".sun").style.left = "-200px";
     cloud.forEach((d) => {
@@ -99,7 +100,7 @@ window.addEventListener("scroll", function () {
     //月亮消失
     document.querySelector(".moon").style.right = "-200px";
     //太陽出現
-    this.document.querySelector(".sun").style.left = "200px";
+    this.document.querySelector(".sun").style.left = "10%";
     //get up
     bed_img.style.left = "0px";
     my.style.display = "";
