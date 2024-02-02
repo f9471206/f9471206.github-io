@@ -204,6 +204,9 @@ body {
       display: flex;
       border-radius: 8px;
       animation: hintAnimation 2s infinite;
+      img {
+        width: 100%;
+      }
     }
     .left {
       img {

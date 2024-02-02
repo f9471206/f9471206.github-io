@@ -208,6 +208,9 @@ body {
   border-radius: 8px;
   animation: hintAnimation 2s infinite;
 }
+.hint .keyboard div img {
+  width: 100%;
+}
 .hint .keyboard .left img {
   transform: rotate(180deg);
 }
