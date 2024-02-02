@@ -12,6 +12,7 @@ body {
   background-color: #87ceeb;
   transition: all 2s ease-in;
   overflow: hidden;
+  user-select: none;
 }
 .clouds {
   width: 100%;
@@ -129,7 +130,88 @@ body {
     transform: translate(-75px, -75px);
   }
 }
+//滑鼠提示
+.hint {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+  background-color: rgba(0, 0, 0, 0.3);
+  .mouse {
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 25%;
+    width: 201px;
+    height: 300px;
+    img {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+    .arrow {
+      position: absolute;
+      width: 30px;
+      height: 70px;
+      top: 20px;
+      right: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .miuse_wheel {
+      width: 10px;
+      height: 50px;
+      background-color: white;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50px;
+      left: 50%;
+      animation: hintAnimation 2s infinite;
+      border: 1px black solid;
+      border-radius: 4px;
+    }
+    @keyframes hintAnimation {
+      0% {
+        background-color: white;
+      }
+      50% {
+        background-color: rgb(255, 110, 110);
+      }
+      100% {
+        background-color: white;
+      }
+    }
+  }
+  .keyboard {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50%;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    div {
+      margin: 1rem;
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      display: flex;
+      border-radius: 8px;
+      animation: hintAnimation 2s infinite;
+    }
+    .left {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
 //看板
 .page_title {
   position: absolute;
@@ -173,6 +255,10 @@ body {
       position: relative;
       .text {
         z-index: 30;
+        img {
+          width: 500px;
+          height: 500px;
+        }
       }
       .tree_1 {
         position: absolute;
@@ -303,6 +389,15 @@ body {
         position: absolute;
         transform-origin: bottom;
         transition: transform 0.3s ease-in;
+        .small_tree_text {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: -60px;
+          left: 50%;
+          width: 150%;
+          font-size: 1.5rem;
+          text-align: center;
+        }
         img {
           width: 100%;
           height: 100%;
@@ -413,7 +508,6 @@ body {
       width: 1920px;
       z-index: 101;
       display: flex;
-
       .ship {
         width: 200px;
         height: 150px;
@@ -573,7 +667,7 @@ body {
     //contact
     .final_page {
       position: relative;
-      min-width: 500px;
+      min-width: 900px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -754,7 +848,8 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  .cloud {
+  .hint {
+    display: none;
   }
   .clouds .sun,
   .clouds .moon {
@@ -837,6 +932,7 @@ body {
     width: 950px;
   }
   .page .content .final_page {
+    max-width: 360px;
     min-width: 360px;
   }
   .page .content .final_page .contact_mail .mail,

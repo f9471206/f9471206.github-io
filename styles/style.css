@@ -13,6 +13,9 @@ body {
   background-color: #87ceeb;
   transition: all 2s ease-in;
   overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .clouds {
@@ -130,6 +133,85 @@ body {
     transform: translate(-75px, -75px);
   }
 }
+.hint {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.hint .mouse {
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 25%;
+  width: 201px;
+  height: 300px;
+}
+.hint .mouse img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.hint .mouse .arrow {
+  position: absolute;
+  width: 30px;
+  height: 70px;
+  top: 20px;
+  right: 40px;
+}
+.hint .mouse .arrow img {
+  width: 100%;
+  height: 100%;
+}
+.hint .mouse .miuse_wheel {
+  width: 10px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50px;
+  left: 50%;
+  animation: hintAnimation 2s infinite;
+  border: 1px black solid;
+  border-radius: 4px;
+}
+@keyframes hintAnimation {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: rgb(255, 110, 110);
+  }
+  100% {
+    background-color: white;
+  }
+}
+.hint .keyboard {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 75%;
+  top: 50%;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hint .keyboard div {
+  margin: 1rem;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  border-radius: 8px;
+  animation: hintAnimation 2s infinite;
+}
+.hint .keyboard .left img {
+  transform: rotate(180deg);
+}
+
 .page_title {
   position: absolute;
   left: 100px;
@@ -174,6 +256,10 @@ body {
 }
 .page .content .about .text {
   z-index: 30;
+}
+.page .content .about .text img {
+  width: 500px;
+  height: 500px;
 }
 .page .content .about .tree_1 {
   position: absolute;
@@ -280,6 +366,15 @@ body {
   position: absolute;
   transform-origin: bottom;
   transition: transform 0.3s ease-in;
+}
+.page .content .skill_page .small_tree .small_tree_text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: -60px;
+  left: 50%;
+  width: 150%;
+  font-size: 1.5rem;
+  text-align: center;
 }
 .page .content .skill_page .small_tree img {
   width: 100%;
@@ -541,7 +636,7 @@ body {
 }
 .page .content .final_page {
   position: relative;
-  min-width: 500px;
+  min-width: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -720,6 +815,9 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .hint {
+    display: none;
+  }
   .clouds .sun,
   .clouds .moon {
     top: 3%;
@@ -777,6 +875,7 @@ body {
     width: 950px;
   }
   .page .content .final_page {
+    max-width: 360px;
     min-width: 360px;
   }
   .page .content .final_page .contact_mail .mail,

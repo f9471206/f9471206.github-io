@@ -1,7 +1,6 @@
 document.querySelector(".page").style.height = window.innerHeight + "px";
 document.querySelector(".page").style.width =
   document.documentElement.scrollWidth + "px";
-
 let touchstart_x;
 window.addEventListener("touchstart", (e) => {
   touchstart_x = e.targetTouches[0].clientX;
@@ -14,22 +13,29 @@ window.addEventListener("touchend", (e) => {
   });
 });
 
+let hint = document.querySelector(".hint");
+if (hint.getBoundingClientRect().left != 0) {
+  hint.style.display = "none";
+}
+
 let skyStar = false;
 window.addEventListener("wheel", (e) => {
+  hint.style.display = "none";
   if (e.deltaY > 0) {
     // 向下滾動
-    window.scrollBy({ left: 700, behavior: "smooth" });
+    window.scrollBy({ left: 400, behavior: "smooth" });
   } else {
     // 向上滾動
-    window.scrollBy({ left: -700, behavior: "smooth" });
+    window.scrollBy({ left: -400, behavior: "smooth" });
   }
 });
 
 window.addEventListener("keydown", (e) => {
+  hint.style.display = "none";
   if (e.keyCode == 39) {
-    window.scrollBy({ left: 500, behavior: "smooth" });
+    window.scrollBy({ left: 200, behavior: "smooth" });
   } else if (e.keyCode == 37) {
-    window.scrollBy({ left: -500, behavior: "smooth" });
+    window.scrollBy({ left: -200, behavior: "smooth" });
   }
 });
 
@@ -275,7 +281,7 @@ function stars(check) {
   let starry = document.createElement("div");
   starry.className = "starry";
   clouds.appendChild(starry);
-  let count = 500;
+  let count = 200;
   let i = 0;
   document.querySelector("body").addEventListener("transitionend", () => {
     while (i < count) {
