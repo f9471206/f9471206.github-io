@@ -133,6 +133,92 @@ body {
     transform: translate(-75px, -75px);
   }
 }
+.progress_bar {
+  position: fixed;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 10px;
+  z-index: 200;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.progress_bar .progress_arrow {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.progress_bar .progress_arrow div {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.2s ease-in;
+}
+.progress_bar .progress_arrow div:nth-child(1) {
+  position: absolute;
+  top: 15px;
+}
+.progress_bar .progress_arrow div:nth-child(2) {
+  position: absolute;
+  bottom: 15px;
+}
+.progress_bar .progress_arrow .close:nth-child(1) {
+  top: 25px;
+  transform: rotate(45deg);
+}
+.progress_bar .progress_arrow .close:nth-child(2) {
+  top: 25px;
+  transform: rotate(-45deg);
+}
+.progress_bar .steps {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: 0.5s ease-in;
+  opacity: 0;
+}
+.progress_bar .steps .circle {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border: 6px solid #cfcfcf;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  transition: all 0.2s ease-in;
+  transition-delay: 0s;
+  font-size: 0.75rem;
+}
+.progress_bar .steps .circle:hover {
+  transform: scale(1.2);
+}
+.progress_bar .steps .active {
+  color: #4070f4;
+  border-color: #4070f4;
+  transition-delay: 200ms;
+}
+.progress_bar .steps .progress {
+  width: 100%;
+  height: 6px;
+  background-color: #cfcfcf;
+  position: absolute;
+  z-index: -1;
+}
+.progress_bar .steps .progress .indicator {
+  transition-delay: 0s;
+  transition: all 0.2s ease-in;
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #4070f4;
+}
+
 .hint {
   width: 100%;
   height: 100%;
@@ -596,7 +682,7 @@ body {
   height: 100%;
 }
 .page .content .house_page {
-  min-width: 1500px;
+  min-width: 1700px;
   z-index: 300;
   height: 100%;
   position: relative;
@@ -892,5 +978,14 @@ body {
   .page .content .final_page .contact_mail .account .copy {
     width: 20px;
     height: 20px;
+  }
+  .progress_bar .steps .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 0.7rem;
+    border-width: 4px;
+  }
+  .progress_bar .steps .progress {
+    height: 4px;
   }
 }/*# sourceMappingURL=style.css.map */

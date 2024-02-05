@@ -6,7 +6,6 @@ window.addEventListener("touchstart", (e) => {
   touchstart_x = e.targetTouches[0].clientX;
 });
 window.addEventListener("touchend", (e) => {
-  console.log(touchstart_x - e.changedTouches[0].clientX);
   window.scrollBy({
     left: touchstart_x - e.changedTouches[0].clientX,
     behavior: "smooth",
@@ -161,6 +160,8 @@ window.addEventListener("scroll", function () {
   }
 
   original_X = scroll_X;
+
+  schedule();
 });
 
 const updateWalk = walk((my, direction) => {
@@ -319,4 +320,55 @@ document.querySelector(".copy").addEventListener("click", (e) => {
   document.execCommand("copy");
   document.body.removeChild(tempInput);
   document.querySelector(".copy_mesg").style.opacity = "1";
+});
+
+//進度條
+function schedule() {
+  let circles = document.querySelectorAll("#progress_circle");
+  let = prog = document.querySelector(".indicator");
+  let currentStep = 1;
+
+  let pageTitle = document.querySelectorAll(".page_title");
+  pageTitle.forEach((p) => {
+    if (p.getBoundingClientRect().left < window.innerWidth / 2) {
+      currentStep++;
+    }
+  });
+
+  circles.forEach((circle, index) => {
+    circle.classList[`${index < currentStep ? "add" : "remove"}`]("active");
+  });
+  prog.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
+}
+
+progressClick();
+function progressClick() {
+  let circles = document.querySelectorAll("#progress_circle");
+  let pageTitle = document.querySelectorAll(".page_title");
+  circles.forEach((circle, index) => {
+    circle.addEventListener("click", (e) => {
+      if (index == 0) return window.scrollTo({ left: 0, behavior: "smooth" });
+      pageTitle[index - 1].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+      });
+    });
+  });
+}
+
+//close
+let progress_arrow = document.querySelector(".progress_arrow");
+let closes = document.querySelectorAll(".progress_arrow div");
+let steps = document.querySelector(".steps");
+console.log(steps);
+progress_arrow.addEventListener("click", () => {
+  closes.forEach((close) => {
+    if (close.classList.contains("close")) {
+      close.classList.remove("close");
+      steps.style.opacity = "0";
+    } else {
+      close.classList.add("close");
+      steps.style.opacity = "1";
+    }
+  });
 });
