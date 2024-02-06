@@ -22,19 +22,19 @@ window.addEventListener("wheel", (e) => {
   hint.style.display = "none";
   if (e.deltaY > 0) {
     // 向下滾動
-    window.scrollBy({ left: 400, behavior: "smooth" });
+    window.scrollBy({ left: 650, behavior: "smooth" });
   } else {
     // 向上滾動
-    window.scrollBy({ left: -400, behavior: "smooth" });
+    window.scrollBy({ left: -650, behavior: "smooth" });
   }
 });
 
 window.addEventListener("keydown", (e) => {
   hint.style.display = "none";
   if (e.keyCode == 39) {
-    window.scrollBy({ left: 200, behavior: "smooth" });
+    window.scrollBy({ left: 500, behavior: "smooth" });
   } else if (e.keyCode == 37) {
-    window.scrollBy({ left: -200, behavior: "smooth" });
+    window.scrollBy({ left: -500, behavior: "smooth" });
   }
 });
 
